@@ -4,7 +4,7 @@ module.exports={
             resolve: 'figdog-theme',
             options: {
                 siteTitle: 'Figdog',
-                siteSlogan: 'PERSPECTIVES ON MARKETING AND MANAGED IT SERVICES',
+                siteSlogan: 'PERSPECTIVES ON MARKETING AND MANAGED IT SERVICES.',
                 topMenuLinks:[
                     {
                        name:'figdog',

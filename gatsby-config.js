@@ -29,7 +29,8 @@ module.exports={
                 colors:{
                     primary: '#f03838',
                     darkGray: "#424242",
-                    darkDarkGray: "#303030"
+                    darkDarkGray: "#303030",
+                    lightGray: "#aeadad"
                 },
                 breakpoints:{
                     mobileWidth:`600px`,

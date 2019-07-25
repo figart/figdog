@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "figdog-theme": "^1.0.2",
-    "gatsby": "^2.13.28",
+    "figdog-theme": "^1.0.6",
+    "gatsby": "^2.13.41",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },

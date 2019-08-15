@@ -4,38 +4,49 @@ module.exports={
             resolve: 'figdog-theme',
             options: {
                 siteTitle: 'Figdog',
-                siteSlogan: 'PERSPECTIVES ON MARKETING AND MANAGED IT SERVICES.',
+                siteSlogan: 'PERSPECTIVES ON MARKETING AND MANAGED IT SERVICES',
+                logo:'/images/Logo-White.png',
                 topMenuLinks:[
                     {
-                       name:'figdog',
-                       link:'/'
-                    },
+                        name:'DARK MODE',
+                        link:'#',
+                        icon: 'fas fa-toggle-on'
+                    }
+                ],
+                footerMenuLinks:[
                     {
-                        name:'',
+                        name:'ABOUT',
+                        link:'/about',
+                     },
+                     {
+                        name:'FOLLOW ME',
                         link:'www.twitter.com',
-                        icon: 'fab fa-twitter'
                      },
                      {
-                        name:'',
-                        link:'www.rss.com',
-                        icon: 'fas fa-rss'
+                        name:'ARCHIVE',
+                        link:'/archive',
                      },
                      {
-                        name:'',
-                        link:'www.linkedin.com',
-                        icon: 'fab fa-linkedin-in'
+                        name:'CONTACT',
+                        link:'/contact',
                      },
                 ],
                 colors:{
-                    primary: '#f03838',
+                    primary: '#1C3B61',
                     darkGray: "#424242",
                     darkDarkGray: "#303030",
-                    lightGray: "#aeadad"
+                    lightGray: "#C4C4C4",
+                    cream: "#061836",
+                    gold: "#EBBA7D",
+                    orange: "#DE6936",
+                    red: "#BF0F0F",
+                    darkBlue: "#061836"
+
                 },
                 breakpoints:{
-                    mobileWidth:`600px`,
-                    tabletWidth:`700px`,
-                    desktopWidth:`889px`
+                    mobileWidth:`611px`,
+                    tabletWidth:`611px`,
+                    desktopWidth:`612px`
                 }
             }
         }

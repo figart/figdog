@@ -19,16 +19,12 @@ module.exports={
                         link:'/about',
                      },
                      {
-                        name:'FOLLOW ME',
-                        link:'www.twitter.com',
+                        name:'ENGAGE',
+                        link:'/engage',
                      },
                      {
                         name:'ARCHIVE',
                         link:'/archive',
-                     },
-                     {
-                        name:'CONTACT',
-                        link:'/contact',
                      },
                 ],
                 colors:{

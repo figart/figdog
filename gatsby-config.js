@@ -6,6 +6,7 @@ module.exports={
                 siteTitle: 'Figdog',
                 siteSlogan: 'PERSPECTIVES ON MARKETING AND MANAGED IT SERVICES',
                 logo:'/images/Logo-White.png',
+                logodark: `/images/Logo-Dark.png`,
                 topMenuLinks:[
                     {
                         name:'DARK MODE',

@@ -23,10 +23,6 @@ module.exports={
                         name:'ENGAGE',
                         link:'/engage',
                      },
-                     {
-                        name:'ARCHIVE',
-                        link:'/archive',
-                     },
                 ],
                 colors:{
                     primary: '#1C3B61',

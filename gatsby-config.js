@@ -6,6 +6,7 @@ module.exports = {
         siteTitle: "Figdog",
         siteSlogan: "PERSPECTIVES ON MARKETING AND MANAGED IT SERVICES",
         title: `figdog`,
+        description: `Reflections on technology, the information technology services industry, and digital marketing.`,
         logo: "/images/Logo-White.png",
         logodark: `/images/Logo-Dark.png`,
         topMenuLinks: [

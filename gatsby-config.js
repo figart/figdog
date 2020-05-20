@@ -1,5 +1,5 @@
 module.exports = {
-  
+
   plugins: [
     {
       resolve: "figdog-theme",

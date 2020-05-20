@@ -5,7 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "figdog-theme": "^1.5.2",
+    "figdog-theme": "^1.5.3",
     "gatsby": "^2.22.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"

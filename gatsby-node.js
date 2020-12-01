@@ -32,7 +32,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
   if (result.errors) {
     reporter.panic("Error loading figdog-theme: ", result.errors);
   }
-  result.data.blog.nodes.forEach(node => {
+  result.data.blog.nodes.forEach((node) => {
     const id = node.id;
     console.log(node.slug);
     console.log(node.id);
@@ -45,10 +45,10 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     actions.createPage({
       path: slug,
       component: require.resolve("./src/templates/blog.js"),
-      context: { id }
+      context: { id },
     });
   });
-  result.data.page.nodes.forEach(node => {
+  result.data.page.nodes.forEach((node) => {
     const id = node.id;
     if (node.slug) {
       if (node.homePage == true) {
@@ -62,7 +62,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     actions.createPage({
       path: slug,
       component: require.resolve("./src/templates/page.js"),
-      context: { id }
+      context: { id },
     });
   });
 };
@@ -78,7 +78,7 @@ exports.onCreateNode = ({ node, actions }, options) => {
     actions.createNodeField({
       node,
       name: `slug`,
-      value: slug
+      value: slug,
     });
   }
   if (node.internal.type == "ContentfulBlog") {
@@ -87,12 +87,12 @@ exports.onCreateNode = ({ node, actions }, options) => {
     actions.createNodeField({
       node,
       name: `slug`,
-      value: slug
+      value: slug,
     });
     actions.createNodeField({
       node,
       name: `blogDate`,
-      value: node.blogDate
+      value: node.blogDate,
     });
   }
 };
@@ -102,24 +102,35 @@ exports.onCreateNode = ({ node, actions }, options) => {
     a content directory and if not create one.
 */
 
-// exports.onPreBootstrap = ({ store }, options) => {
+// exports.onPreBootstrap = ({ store, siteMetadata }) => {
 //   // const { program } = store.getState();
 //   // const contentPath = options.contentPath || 'docs'
 //   // const dir = path.join(program.directory, contentPath)
 //   // if (!fs.existsSync(dir)){
 //   //     mkdirp.sync(dir)
 //   // }
+//   const siteMetaData = graphql(`
+//     {
+//       site {
+//         siteMetadata {
+//           description
+//         }
+//       }
+//     }
+//   `);
+
+//   console.log(siteMetaData);
 //   const folder = "/src/components/";
 //   const path = __dirname + folder;
-//   fs.mkdir(path, err => {});
+//   fs.mkdir(path, (err) => {});
 //   const file = fs.createWriteStream(path + "variables.js", { flags: "w" });
 //   // This is here incase any errors occur
-//   file.on("open", function() {
-//     // file.write(
-//     //   'export const primaryColor = "' + options.colors.primary + '"' + "\n"
-//     // );
+//   file.on("open", function () {
 //     file.write(
-//       'export const darkGray = "' + options.colors.darkGray + '"' + "\n"
+//       'export const primaryColor = "' + siteMetadata.colors.primary + '"' + "\n"
+//     );
+//     file.write(
+//       'export const darkGray = "' + siteMetadata.colors.darkGray + '"' + "\n"
 //     );
 //     file.write(
 //       'export const mobileWidth = "' +
@@ -164,7 +175,7 @@ function slugify(string) {
     .toString()
     .toLowerCase()
     .replace(/\s+/g, "-") // Replace spaces with
-    .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
+    .replace(p, (c) => b.charAt(a.indexOf(c))) // Replace special characters
     .replace(/&/g, "-and-") // Replace & with ‘and’
     .replace(/[^\w\-]+/g, "") // Remove all non-word characters
     .replace(/\-\-+/g, "-") // Replace multiple — with single -

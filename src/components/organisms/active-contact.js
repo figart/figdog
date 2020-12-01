@@ -1,97 +1,96 @@
-import React from 'react'
-import styled from "styled-components"
-import Container from 'figdog-theme/src/components/container'
-import * as variable from 'figdog-theme/src/components/variables'
-import FooterMenuLinks from 'figdog-theme/src/components/organisms/footermenulinks'
-import { Link } from 'gatsby'
-import bg from 'figdog-theme/src/images/bg.png'
-import { Global, css } from "@emotion/core"
+import React from "react";
+import styled from "styled-components";
+import Container from "../../components/container";
+import * as variable from "../../components/variables";
+import FooterMenuLinks from "../../components/organisms/footermenulinks";
+import { Link } from "gatsby";
+import bg from "../../images/bg.png";
+import { Global, css } from "@emotion/core";
 
-const ActiveContactStyle = styled.div`
+const ActiveContactStyle = styled.div``;
 
-`;
-
-
-export const ActiveContact = ({
-  }) => {
-    return (
+export const ActiveContact = ({}) => {
+  return (
     <ActiveContactStyle>
-        <Global
-                styles={css`
+      <Global styles={css``} />
+      <form
+        method="POST"
+        action="https://digett.activehosted.com/proc.php"
+        id="_form_9_"
+        class="_form _form_9 _inline-form  _dark"
+        novalidate
+      >
+        <input type="hidden" name="u" value="9" />
+        <input type="hidden" name="f" value="9" />
+        <input type="hidden" name="s" />
+        <input type="hidden" name="c" value="0" />
+        <input type="hidden" name="m" value="0" />
+        <input type="hidden" name="act" value="sub" />
+        <input type="hidden" name="v" value="2" />
+        <div class="_form-content">
+          <div class="_form_element _x76736470 _full_width _clear">
+            <div class="_form-title">Send me a message</div>
+          </div>
+          <div class="_form_element _x76333123 _full_width _clear">
+            <div class="_html-code">
+              Want to get a message straight to my inbox? I would be delighted
+              to hear from you, and will be sure to respond as quickly as
+              possible.
+            </div>
+          </div>
+          <div class="_form_element _x90082572 _full_width ">
+            <label class="_form-label">Full Name</label>
+            <div class="_field-wrapper">
+              <input type="text" name="fullname" placeholder="Type your name" />
+            </div>
+          </div>
+          <div class="_form_element _x75670395 _full_width ">
+            <label class="_form-label">Email*</label>
+            <div class="_field-wrapper">
+              <input
+                type="text"
+                name="email"
+                placeholder="Type your email"
+                required
+              />
+            </div>
+          </div>
+          <div class="_form_element _x32832569 _full_width ">
+            <label class="_form-label">Phone</label>
+            <div class="_field-wrapper">
+              <input
+                type="text"
+                name="phone"
+                placeholder="Type your phone number"
+              />
+            </div>
+          </div>
+          <div class="_form_element _field2 _full_width ">
+            <label class="_form-label">Message</label>
+            <div class="_field-wrapper">
+              <textarea name="field[2]" placeholder=""></textarea>
+            </div>
+          </div>
+          <div class="_form_element _x31897401 _full_width ">
+            <label class="_form-label">Please verify your request*</label>
+            <div
+              class="g-recaptcha"
+              data-sitekey="6LcwIw8TAAAAACP1ysM08EhCgzd6q5JAOUR1a0Go"
+            ></div>
+          </div>
+          <div class="_button-wrapper _full_width">
+            <button id="_form_9_submit" class="_submit" type="submit">
+              Send message
+            </button>
+          </div>
+          <div class="_clear-element"></div>
+        </div>
+        <div class="_form-thank-you"></div>
+      </form>
 
-                `}
-            />
-<form method="POST" action="https://digett.activehosted.com/proc.php" id="_form_9_" class="_form _form_9 _inline-form  _dark" novalidate>
-  <input type="hidden" name="u" value="9" />
-  <input type="hidden" name="f" value="9" />
-  <input type="hidden" name="s" />
-  <input type="hidden" name="c" value="0" />
-  <input type="hidden" name="m" value="0" />
-  <input type="hidden" name="act" value="sub" />
-  <input type="hidden" name="v" value="2" />
-  <div class="_form-content">
-    <div class="_form_element _x76736470 _full_width _clear" >
-      <div class="_form-title">
-        Send me a message
-      </div>
-    </div>
-    <div class="_form_element _x76333123 _full_width _clear" >
-      <div class="_html-code">
-        Want to get a message straight to my inbox? I would be delighted to hear from you, and will be sure to respond as quickly as possible.
-      </div>
-    </div>
-    <div class="_form_element _x90082572 _full_width " >
-      <label class="_form-label">
-        Full Name
-      </label>
-      <div class="_field-wrapper">
-        <input type="text" name="fullname" placeholder="Type your name" />
-      </div>
-    </div>
-    <div class="_form_element _x75670395 _full_width " >
-      <label class="_form-label">
-        Email*
-      </label>
-      <div class="_field-wrapper">
-        <input type="text" name="email" placeholder="Type your email" required/>
-      </div>
-    </div>
-    <div class="_form_element _x32832569 _full_width " >
-      <label class="_form-label">
-        Phone
-      </label>
-      <div class="_field-wrapper">
-        <input type="text" name="phone" placeholder="Type your phone number" />
-      </div>
-    </div>
-    <div class="_form_element _field2 _full_width " >
-      <label class="_form-label">
-        Message
-      </label>
-      <div class="_field-wrapper">
-        <textarea name="field[2]" placeholder=""  ></textarea>
-      </div>
-    </div>
-    <div class="_form_element _x31897401 _full_width " >
-      <label class="_form-label">
-        Please verify your request*
-      </label>
-      <div class="g-recaptcha" data-sitekey="6LcwIw8TAAAAACP1ysM08EhCgzd6q5JAOUR1a0Go">
-      </div>
-    </div>
-    <div class="_button-wrapper _full_width">
-      <button id="_form_9_submit" class="_submit" type="submit">
-        Send message
-      </button>
-    </div>
-    <div class="_clear-element">
-    </div>
-  </div>
-  <div class="_form-thank-you">
-  </div>
-</form>
-
-    <script dangerouslySetInnerHTML= {{ __html: ` 
+      <script
+        dangerouslySetInnerHTML={{
+          __html: ` 
     window.cfields = {"2":"message"};
     window._show_thank_you = function(id, message, trackcmp_url) {
       var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
@@ -416,12 +415,11 @@ export const ActiveContact = ({
       addEvent(form_to_submit, 'submit', form_submit);
     })();
     
-   `}} />
-
+   `,
+        }}
+      />
     </ActiveContactStyle>
+  );
+};
 
-    )
-  }
-
-
-export default ActiveContact
+export default ActiveContact;

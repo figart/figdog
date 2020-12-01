@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { graphql } from "gatsby";
 import PropTypes from "prop-types";
-import Layout from "figdog-theme/src/components/layout";
+import Layout from "../components/layout";
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import Container from "figdog-theme/src/components/container";
+import Container from "../components/container";
 import styled from "styled-components";
-import * as variable from "figdog-theme/src/components/variables";
+import * as variable from "../components/variables";
 import { Global, css } from "@emotion/core";
-import dog from "figdog-theme/src/images/dog.png";
-import whiteDog from "figdog-theme/src/images/whitedog.png";
+import dog from "../images/dog.png";
+import whiteDog from "../images/whitedog.png";
 import { Disqus, CommentCount } from "gatsby-plugin-disqus";
 import { Helmet } from "react-helmet";
 import { PopupboxManager, PopupboxContainer } from "react-popupbox";
@@ -20,28 +20,28 @@ const Text = ({ children }) => <p className="align-center">{children}</p>;
 
 const options = {
   renderMark: {
-    [MARKS.BOLD]: text => <Bold>{text}</Bold>
+    [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
   },
   renderNode: {
-    [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>
+    [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
   },
   renderNode: {
-    [BLOCKS.EMBEDDED_ENTRY]: node => {
+    [BLOCKS.EMBEDDED_ENTRY]: (node) => {
       const { id } = node.data.target.sys.contentType.sys;
 
       switch (id) {
         case "imageWithTagline":
           const { image, tagline } = node.data.target.fields;
           const { title, description, file } = image["en-US"].fields;
-          var closePopupbox = e => {
+          var closePopupbox = (e) => {
             PopupboxManager.close({
-              fadeInSpeed: 10
+              fadeInSpeed: 10,
             });
           };
           var openPopupbox = (e, file) => {
             const content = (
               <div
-                onClick={e => {
+                onClick={(e) => {
                   closePopupbox(e);
                 }}
               >
@@ -58,14 +58,14 @@ const options = {
             PopupboxManager.open({
               content,
               fadeInSpeed: 10,
-              config: {}
+              config: {},
             });
           };
           return (
             <div className="image-with-tagline">
               <div
                 className="image-container"
-                onClick={e => {
+                onClick={(e) => {
                   openPopupbox(e, file);
                 }}
               >
@@ -81,22 +81,22 @@ const options = {
           );
       }
     },
-    [BLOCKS.EMBEDDED_ASSET]: node => {
+    [BLOCKS.EMBEDDED_ASSET]: (node) => {
       const { title, description, file } = node.data.target.fields;
       const mimeType = file["en-US"].contentType;
       const mimeGroup = mimeType.split("/")[0];
 
       switch (mimeGroup) {
         case "image":
-          var closePopupbox = e => {
+          var closePopupbox = (e) => {
             PopupboxManager.close({
-              fadeInSpeed: 10
+              fadeInSpeed: 10,
             });
           };
           var openPopupbox = (e, file) => {
             const content = (
               <div
-                onClick={e => {
+                onClick={(e) => {
                   closePopupbox(e);
                 }}
               >
@@ -113,13 +113,13 @@ const options = {
             PopupboxManager.open({
               content,
               fadeInSpeed: 10,
-              config: {}
+              config: {},
             });
           };
           return (
             <div
               className="image-container"
-              onClick={e => {
+              onClick={(e) => {
                 openPopupbox(e, file);
               }}
             >
@@ -150,8 +150,8 @@ const options = {
             </span>
           );
       }
-    }
-  }
+    },
+  },
 };
 
 export const query = graphql`
@@ -218,7 +218,7 @@ class BlogPostTemplate extends Component {
     e.preventDefault();
   };
 
-  dogClick = e => {
+  dogClick = (e) => {
     window.scrollTo(0, 0);
     e.preventDefault();
   };
@@ -234,7 +234,7 @@ class BlogPostTemplate extends Component {
       blogDate,
       teaser,
       slug,
-      post
+      post,
     } = this.props;
     const twitterShareUrl =
       "https://twitter.com/share?text=" +
@@ -251,7 +251,7 @@ class BlogPostTemplate extends Component {
     let disqusConfig = {
       url: `${"https://fig.dog" + slug}`,
       identifier: post.id,
-      title: title
+      title: title,
     };
     return (
       <Layout>
@@ -439,7 +439,7 @@ class BlogPostTemplate extends Component {
               <a
                 target="_blank"
                 href={linkedInUrl}
-                onClick={e => {
+                onClick={(e) => {
                   this.linkedInClick(e, slug, title);
                 }}
               >
@@ -451,7 +451,7 @@ class BlogPostTemplate extends Component {
             </div>
             <div
               className="dogs"
-              onClick={e => {
+              onClick={(e) => {
                 this.dogClick(e, slug, title);
               }}
             >
@@ -487,8 +487,8 @@ const Blog = ({ data }) => {
 
 Blog.propTypes = {
   data: PropTypes.shape({
-    allContentfulBlog: PropTypes.object
-  })
+    allContentfulBlog: PropTypes.object,
+  }),
 };
 
 export default Blog;

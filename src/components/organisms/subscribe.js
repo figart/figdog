@@ -1,61 +1,55 @@
-import React from 'react'
-import styled from "styled-components"
-import Container from 'figdog-theme/src/components/container'
-import * as variable from 'figdog-theme/src/components/variables'
-import FooterMenuLinks from 'figdog-theme/src/components/organisms/footermenulinks'
-import { Link } from 'gatsby'
-import bg from 'figdog-theme/src/images/bg.png'
-import { Global, css } from "@emotion/core"
+import React from "react";
+import styled from "styled-components";
+import Container from "../../components/container";
+import * as variable from "../../components/variables";
+import FooterMenuLinks from "../../components/organisms/footermenulinks";
+import { Link } from "gatsby";
+import bg from "../../images/bg.png";
+import { Global, css } from "@emotion/core";
 
-const SubscribeStyle = styled.div`
+const SubscribeStyle = styled.div``;
 
-`;
-
-
-export const subscribe = ({
-  }) => {
-    return (
+export const subscribe = ({}) => {
+  return (
     <SubscribeStyle>
-        <Global
-                styles={css`
-
-                `}
-            />
-            <form method="POST" action="https://digett.activehosted.com/proc.php" id="_form_7_" class="_form _form_7 _inline-form _inline-style _dark" novalidate>
-    <input type="hidden" name="u" value="7" />
-    <input type="hidden" name="f" value="7" />
-    <input type="hidden" name="s" />
-    <input type="hidden" name="c" value="0" />
-    <input type="hidden" name="m" value="0" />
-    <input type="hidden" name="act" value="sub" />
-    <input type="hidden" name="v" value="2" />
-    <div class="_form-content">
-      <div class="_form_element _x35443553 _inline-style _clear" >
-        <div class="_form-title">
-          Get an email when I post new content
+      <Global styles={css``} />
+      <form
+        method="POST"
+        action="https://digett.activehosted.com/proc.php"
+        id="_form_7_"
+        class="_form _form_7 _inline-form _inline-style _dark"
+        novalidate
+      >
+        <input type="hidden" name="u" value="7" />
+        <input type="hidden" name="f" value="7" />
+        <input type="hidden" name="s" />
+        <input type="hidden" name="c" value="0" />
+        <input type="hidden" name="m" value="0" />
+        <input type="hidden" name="act" value="sub" />
+        <input type="hidden" name="v" value="2" />
+        <div class="_form-content">
+          <div class="_form_element _x35443553 _inline-style _clear">
+            <div class="_form-title">Get an email when I post new content</div>
+          </div>
+          <div class="_form_element _x35763815 _inline-style ">
+            <label class="_form-label">&nbsp;</label>
+            <div class="_field-wrapper">
+              <input type="text" name="email" placeholder="" required />
+            </div>
+          </div>
+          <div class="_button-wrapper _inline-style">
+            <button id="_form_7_submit" class="_submit" type="submit">
+              Subscribe
+            </button>
+          </div>
+          <div class="_clear-element"></div>
         </div>
-      </div>
-      <div class="_form_element _x35763815 _inline-style " >
-        <label class="_form-label">
-          &nbsp;
-        </label>
-        <div class="_field-wrapper">
-          <input type="text" name="email" placeholder="" required/>
-        </div>
-      </div>
-      <div class="_button-wrapper _inline-style">
-        <button id="_form_7_submit" class="_submit" type="submit">
-          Subscribe
-        </button>
-      </div>
-      <div class="_clear-element">
-      </div>
-    </div>
-    <div class="_form-thank-you">
-    </div>
-  </form>
+        <div class="_form-thank-you"></div>
+      </form>
 
-    <script dangerouslySetInnerHTML= {{ __html: ` 
+      <script
+        dangerouslySetInnerHTML={{
+          __html: ` 
     
     window.cfields = [];
     window._show_thank_you = function(id, message, trackcmp_url) {
@@ -364,12 +358,11 @@ export const subscribe = ({
         return false;
       };
       addEvent(form_to_submit, 'submit', form_submit);
-    })(); `}} />
-
+    })(); `,
+        }}
+      />
     </SubscribeStyle>
+  );
+};
 
-    )
-  }
-
-
-export default subscribe
+export default subscribe;

@@ -7,60 +7,60 @@ module.exports = {
     blogPath: `/blog`,
     title: `figdog`,
     description: `Reflections on technology, the information technology services industry, and digital marketing.`,
-        siteTitle: "Figdog",
-        siteSlogan: "PERSPECTIVES ON MARKETING AND MANAGED IT SERVICES",
-        title: `figdog`,
-        description: `Our fancy slogan to capture views`,
-        siteUrl: `https://fig.dog`,
-        logo: "/images/Logo-White.png",
-        logodark: `/images/Logo-Dark.png`,
-        topMenuLinks: [
-          {
-            name: "DARK MODE",
-            link: "#",
-            icon: "fas fa-toggle-on"
-          }
-        ],
-        footerMenuLinks: [
-          {
-            name: "ABOUT",
-            link: "/about"
-          },
-          {
-            name: "ENGAGE",
-            link: "/engage"
-          }
-        ],
-      menuLinks: [
+    siteTitle: "Figdog",
+    siteSlogan: "PERSPECTIVES ON MARKETING AND MANAGED IT SERVICES",
+    title: `figdog`,
+    description: `Our fancy slogan to capture views`,
+    siteUrl: `https://fig.dog`,
+    logo: "/images/Logo-White.png",
+    logodark: `/images/Logo-Dark.png`,
+    topMenuLinks: [
+      {
+        name: "DARK MODE",
+        link: "#",
+        icon: "fas fa-toggle-on",
+      },
+    ],
+    footerMenuLinks: [
+      {
+        name: "ABOUT",
+        link: "/about",
+      },
+      {
+        name: "ENGAGE",
+        link: "/engage",
+      },
+    ],
+    menuLinks: [
       {
         name: "Blog",
-        link: "/"
+        link: "/",
       },
       {
         name: "Contact",
-        link: "/contact"
+        link: "/contact",
       },
       {
         name: "About",
-        link: "/about"
-      }
+        link: "/about",
+      },
     ],
-        colors: {
-          primary: "#1C3B61",
-          darkGray: "#424242",
-          darkDarkGray: "#303030",
-          lightGray: "#C4C4C4",
-          cream: "#061836",
-          gold: "#EBBA7D",
-          orange: "#DE6936",
-          red: "#BF0F0F",
-          darkBlue: "#061836"
-        },
-        breakpoints: {
-          mobileWidth: `611px`,
-          tabletWidth: `611px`,
-          desktopWidth: `612px`
-        }
+    colors: {
+      primary: "#1C3B61",
+      darkGray: "#424242",
+      darkDarkGray: "#303030",
+      lightGray: "#C4C4C4",
+      cream: "#061836",
+      gold: "#EBBA7D",
+      orange: "#DE6936",
+      red: "#BF0F0F",
+      darkBlue: "#061836",
+    },
+    breakpoints: {
+      mobileWidth: `611px`,
+      tabletWidth: `611px`,
+      desktopWidth: `612px`,
+    },
   },
   plugins: [
     `@contentful/gatsby-transformer-contentful-richtext`,
@@ -68,14 +68,14 @@ module.exports = {
       resolve: "gatsby-source-contentful",
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN
-      }
+        accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN,
+      },
     },
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
-        shortname: `figdog`
-      }
+        shortname: `figdog`,
+      },
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-emotion`,
@@ -83,16 +83,16 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Poppins\:300,400,400i,600,700` // you can also specify font weights and styles
-        ]
-      }
+          `Poppins\:300,400,400i,600,700`, // you can also specify font weights and styles
+        ],
+      },
     },
     `gatsby-plugin-react-helmet`,
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
-        id: "GTM-5973DMQ"
-      }
+        id: "GTM-5973DMQ",
+      },
     },
     {
       resolve: `gatsby-plugin-feed`,
@@ -112,7 +112,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allContentfulBlog } }) => {
-              return allContentfulBlog.edges.map(edge => {
+              return allContentfulBlog.edges.map((edge) => {
                 return Object.assign({}, edge.node, {
                   description:
                     edge.node.childContentfulBlogTeaserRichTextNode
@@ -125,9 +125,9 @@ module.exports = {
                     {
                       "content:encoded":
                         edge.node.childContentfulBlogBodyRichTextNode
-                          .childContentfulRichText.html
-                    }
-                  ]
+                          .childContentfulRichText.html,
+                    },
+                  ],
                 });
               });
             },
@@ -173,10 +173,10 @@ module.exports = {
             // if `string` is used, it will be used to create RegExp and then test if pathname of
             // current page satisfied this regular expression;
             // if not provided or `undefined`, all pages will have feed reference inserted
-            match: "^/blog/"
-          }
-        ]
-      }
+            match: "^/blog/",
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-favicon`,
@@ -204,9 +204,9 @@ module.exports = {
           favicons: true,
           firefox: true,
           yandex: false,
-          windows: false
-        }
-      }
-    }
-  ]
+          windows: false,
+        },
+      },
+    },
+  ],
 };

@@ -62,6 +62,7 @@ module.exports = {
       desktopWidth: `612px`,
     },
   },
+
   plugins: [
     `@contentful/gatsby-transformer-contentful-richtext`,
     {

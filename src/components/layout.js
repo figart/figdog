@@ -9,7 +9,8 @@ import * as variable from "../components/variables.js";
 import ThemeContext from "../components/context/ThemeContext";
 import bg from "../images/bg.png";
 import BodyClassName from "react-body-classname";
-
+import "../components/scss/variables.scss";
+import "../components/scss/layout.scss";
 const GlobalStyles = styled.div``;
 
 const Layout = ({ children }) => (
@@ -53,7 +54,7 @@ const Layout = ({ children }) => (
               <BodyClassName
                 className={theme.dark ? "dark" : "light"}
               ></BodyClassName>
-              <Global
+              {/* <Global
                 styles={css`
                   body {
                     h1 {
@@ -146,7 +147,7 @@ const Layout = ({ children }) => (
                     }
                   }
                 `}
-              />
+              /> */}
               <Header
                 topMenuLinks={data.site.siteMetadata.topMenuLinks}
                 menuLinks={data.site.siteMetadata.menuLinks}

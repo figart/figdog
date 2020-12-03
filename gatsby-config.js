@@ -80,6 +80,7 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-emotion`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
